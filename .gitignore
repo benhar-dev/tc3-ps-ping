@@ -1,0 +1,58 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control #
+
+## Ignore Twincat non-source files ##
+Confidential/
+
+### User-specific files (from 4018 tmc should be ignored) ###
+*.~u
+*.tpy
+*.tmc
+*.suo
+*.user
+*.orig
+TrialLicense.tclrs
+
+### Build results ###
+_Boot/
+_CompileInfo/
+.engineering_servers/
+*.compileinfo
+*.bootinfo
+*.bootinfo_guids
+
+### Visual studio files ###
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.dll
+*.lib
+*.sbr
+*.crc
+*.cid
+*.autostart
+*.app
+*.compileinfo
+*.occ
+*.tizip
+*.plcproj.orig
+
+### VS Code files ###
+*.vscode
+
+### Windows files ###
+Thumbs.db
+*.htm

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <POU Name="MAIN" Id="{84c389de-53e5-4ef0-a7de-600428ac4ab5}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	start : BOOL;
+	pingReply : INT := -1; // -1 for not complete, 0 for no ping, 1 for ping reply
+	ping : NT_StartProcess;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// you will need to run the following commands on your IPC using Administrator Powershell. 
+// this is to install the TcXaeMgmt package in powershell which the below command will use
+// ----------------------------------------------------------------------------------------
+// [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+// Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+// Install-Module -Name TcXaeMgmt -RequiredVersion 3.2.25
+
+// To use
+// ------
+// Main.pingReply is used for the feedback
+// 127.0.0.1 is the computer which will be pinged.
+// set start to true to run a ping test. 
+// typically takes 5 seconds to have a result. 
+
+ping(
+	NetId := '',
+	PathStr := 'C:\Windows\System32\mshta vbscript:Execute("CreateObject(""WScript.Shell"").Run ""powershell -c $$r=get-adsroute -local;$$s=New-TcSession -Route $$r -Port 851;Write-TcValue -Session $$s -Path ',
+	DirName := 'C:\Windows\System32\WindowsPowerShell\v1.0',
+	ComndLine := '""""Main.pingReply"""" -value (Test-Connection -ComputerName 127.0.0.1 -Quiet) -Force;Close-TcSession -InputObject $$s;"", 0: window.close")',
+	Start := start,
+	TmOut := DEFAULT_ADS_TIMEOUT
+);
+
+Start := FALSE;]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="40" Count="0" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="45" Count="1" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="60" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="61" Count="4" />
+      <LineId Id="50" Count="9" />
+      <LineId Id="49" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
