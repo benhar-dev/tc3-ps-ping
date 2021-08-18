@@ -22,6 +22,9 @@ You will need to install the TcXaeMgmt module in to Powershell on the target whi
 
 You should set the return value to -1 then run the ping.  
 
+## Screenshot
+![image](./docs/Images/Screenshot.png)
+
 ## Code Snippets
 We have 2 main limitations with NT_StartProcess.  The first is that we are unable to return values directly from the executed application.  Secondly we are limited to T_MaxString as input parameters (strings of 255 characters).  The input parameter size can be doubled by spreading both path and arguments across both PathStr and ComndLine parameters.  These are concat together which means you have 510 characters to play with.  
 
