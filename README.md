@@ -20,7 +20,7 @@ This is a proof of concept that you can use NT_StartProcess (with powershell) to
 ## Getting Started
 You will need to install the TcXaeMgmt module in to Powershell on the target which this project will be run.
 
-To do so (if you have no internet connection), open Powershell as administrator and excute this on cmd
+To do so (if you have no internet connection), open Powershell as administrator and execute this on cmd
 ```bash
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 ```
