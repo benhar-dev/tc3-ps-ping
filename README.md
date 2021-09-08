@@ -31,7 +31,7 @@ Then go to folder .\src\Main\Modules\TcXaeMgmt and execute as administrator.
 install.bat 
 ```
 
-The folder ```bash C:\Program Files\WindowsPowerShell\Modules\TcXaeMgmt\3.2.25 ``` should look like this:
+The folder ``` C:\Program Files\WindowsPowerShell\Modules\TcXaeMgmt\3.2.25 ``` should look like this:
 
 ## Screenshot
 ![image](./docs/Images/Screenshot2.png)
