@@ -76,7 +76,7 @@ C:\Windows\System32\mshta vbscript:Execute("CreateObject(""WScript.Shell"").Run 
 The final step was to escape the $ using $$ in TwinCAT and to split the string across the two parameters. 
 
 ## Versions
-* TcXaeShell 3.1.4024.17
+* TcXaeShell 3.1.4024.20
 * TcXaeMgmt 3.2.25 for Powershell (instructions included in Main.POU)
 
 ## Need more help?
