@@ -1,0 +1,1 @@
+powershell.exe -file %~dp0script.ps1
