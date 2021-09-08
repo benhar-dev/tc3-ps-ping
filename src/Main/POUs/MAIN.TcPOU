@@ -38,7 +38,7 @@ comndLine:=CONCAT(STR1:=comndLine, STR2:=' -Quiet) -Force;Close-TcSession -Input
 ping(
 	NetId := '',
 	PathStr := 'C:\Windows\System32\mshta vbscript:Execute("CreateObject(""WScript.Shell"").Run ""powershell -c $$r=get-adsroute -local;$$s=New-TcSession -Route $$r -Port 851;Write-TcValue -Session $$s -Path ',
-	DirName := 'C:\Windows\System32\WindowsPowerShell\v1.0',
+	DirName := 'C:\Windows\System32',
 	ComndLine := comndLine,
 	Start := start,
 	TmOut := DEFAULT_ADS_TIMEOUT
