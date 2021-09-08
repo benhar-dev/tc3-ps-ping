@@ -20,7 +20,25 @@ This is a proof of concept that you can use NT_StartProcess (with powershell) to
 ## Getting Started
 You will need to install the TcXaeMgmt module in to Powershell on the target which this project will be run.
 
-You should set the return value to -1 then run the ping.  
+To do so (if have no internet connection), open Powershell as administrator and excute this on cmd
+```bash
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+```
+
+Then go to folder .\src\Main\Modules\TcXaeMgmt and execute as administrator.
+
+```bash
+install.bat 
+```
+
+The folder ```bash C:\Program Files\WindowsPowerShell\Modules\TcXaeMgmt\3.2.25 ``` should look like this:
+
+## Screenshot
+![image](./docs/Images/Screenshot2.png)
+
+You can download the offline package by yourself at: https://www.powershellgallery.com/packages/TcXaeMgmt/3.2.25
+
+You should set the return value to -1 then run the ping. Type 127.0.0.1 and force start to TRUE.
 
 ## Screenshot
 ![image](./docs/Images/Screenshot.png)
