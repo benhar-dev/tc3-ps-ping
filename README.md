@@ -18,27 +18,15 @@ in perpetuity.
 This is a proof of concept that you can use NT_StartProcess (with powershell) to tell if a ping was successful.    
 
 ## Getting Started
-You will need to install the TcXaeMgmt module in to Powershell on the target which this project will be run.
+You will need to install the TcXaeMgmt module in to Powershell on the target which this project will be run. Instructions can be found [here](#install-of-tcxaemgmt).
 
-To do so (if you have no internet connection), open Powershell as administrator and execute this on cmd
-```bash
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
-```
+Once done, run the program on your target and set the "start" variable to true. 
 
-Then go to folder .\src\Main\Modules\TcXaeMgmt and execute as administrator.
-
-```bash
-install.bat 
-```
-
-The folder ``` C:\Program Files\WindowsPowerShell\Modules\TcXaeMgmt\3.2.25 ``` should look like this:
-
-## Screenshot
-![image](./docs/Images/Screenshot2.png)
-
-You can download the offline package by yourself at: https://www.powershellgallery.com/packages/TcXaeMgmt/3.2.25
-
-You should set the return value to -1 then run the ping. Type 127.0.0.1 and force start to TRUE.
+|pingReply|Meaning|
+|-|-|
+|-1| Pending |
+|0| Ping failed |
+|1| Ping succeeded | 
 
 ## Screenshot
 ![image](./docs/Images/Screenshot.png)
@@ -74,6 +62,26 @@ C:\Windows\System32\mshta vbscript:Execute("CreateObject(""WScript.Shell"").Run 
 ```
 
 The final step was to escape the $ using $$ in TwinCAT and to split the string across the two parameters. 
+
+## Install of TcXaeMgmt
+
+To do so (if you have no internet connection), open Powershell as administrator and execute this on cmd
+```bash
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+```
+
+Then go to folder .\src\Main\Modules\TcXaeMgmt and execute as administrator.
+
+```bash
+install.bat 
+```
+
+The folder ``` C:\Program Files\WindowsPowerShell\Modules\TcXaeMgmt\3.2.25 ``` should look like this:
+
+## Screenshot
+![image](./docs/Images/Screenshot2.png)
+
+You can download the offline package by yourself at: https://www.powershellgallery.com/packages/TcXaeMgmt/3.2.25
 
 ## Versions
 * TcXaeShell 3.1.4024.20

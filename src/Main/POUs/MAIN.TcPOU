@@ -5,10 +5,10 @@
 VAR
 
 	start 		:BOOL;
-	ip			:STRING;
-	comndLine	:STRING(139);
+	ip			:STRING := '127.0.0.1'; // is the address which will be pinged.
+	pingReply 	:INT := -1; // -1 for pending, 0 for ping failed, 1 ping succeeded
 	
-	pingReply 	:INT := -1; // -1 for not complete, 0 for no ping, 1 for ping reply
+	comndLine	:STRING(139);
 	ping 		:NT_StartProcess;
 
 END_VAR]]></Declaration>
@@ -28,11 +28,9 @@ END_VAR]]></Declaration>
 // To use
 // ------
 // Main.pingReply is used for the feedback
-// 127.0.0.1 is the computer which will be pinged.
 // set start to true to run a ping test. 
-// typically takes 5 seconds to have a result. 
-
-//ip := '127.0.0.1';
+// approximately 5 seconds to have a ping succeeded result. 
+// approximately 10 seconds to have a ping failed result. 
 
 comndLine:=CONCAT(STR1:='""""Main.pingReply"""" -value (Test-Connection -ComputerName ', STR2:=ip);
 comndLine:=CONCAT(STR1:=comndLine, STR2:=' -Quiet) -Force;Close-TcSession -InputObject $$s;"", 0: window.close")');
@@ -46,12 +44,21 @@ ping(
 	TmOut := DEFAULT_ADS_TIMEOUT
 );
 
-Start := FALSE;]]></ST>
+IF start THEN
+	pingReply := -1;
+	start := FALSE;
+END_IF
+]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="98" Count="6" />
       <LineId Id="97" Count="0" />
-      <LineId Id="72" Count="24" />
+      <LineId Id="72" Count="6" />
+      <LineId Id="80" Count="1" />
+      <LineId Id="126" Count="0" />
+      <LineId Id="84" Count="11" />
+      <LineId Id="122" Count="3" />
+      <LineId Id="96" Count="0" />
       <LineId Id="49" Count="0" />
     </LineIds>
   </POU>
