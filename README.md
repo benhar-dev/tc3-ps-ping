@@ -89,3 +89,4 @@ You can download the offline package by yourself at: https://www.powershellgalle
 
 ## Need more help?
 Please visit http://beckhoff.com/ for further guides
+Coding byte video series found [here](https://codingbytes.teachable.com/p/codingbytes)
